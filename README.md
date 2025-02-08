@@ -1,2 +1,2 @@
 # Studybud
-Python DJango Assignment 
+Python Django Assignment 
