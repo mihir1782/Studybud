@@ -9,6 +9,8 @@ class Topic(models.Model):
     def __str__(self):
         return self.name
 
+  
+
 
 
 class Room(models.Model):
@@ -25,7 +27,11 @@ class Room(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+            return self.name  
+    class Meta:
+        ordering= ['-updated','-created']
+
+     
 
 class Message(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
@@ -34,6 +40,9 @@ class Message(models.Model):
     body = models.TextField()
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering= ['updated','created']
 
     def __str__(self):
         return self.body[0:50]
