@@ -8,6 +8,15 @@
 <body>
     <!-- want this on top of the page inside of every page -->
     {% include 'navbar.html' %}
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
     {% block content %}
     <!-- tell the website where to add these child templates when we wrap (parent )another template -->
 
