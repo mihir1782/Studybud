@@ -19,7 +19,7 @@ class Room(models.Model):
     name = models.CharField(max_length=200)
     # by default null is set to False 
     description = models.TextField(null=True,blank=True)
-    # participants = 
+    participants = models.ManyToManyField(User,related_name="participants",blank=True)
     updated = models.DateTimeField(auto_now=True)
     # auto_now = takes a snapshot  everytime save the item
     # auto-now_add = takes the timestamp when we first save/ create the instance
